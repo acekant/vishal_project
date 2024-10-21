@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload JavaScript with Progress Ba | CodingNepal</title>
+  <link rel="stylesheet" href="upload.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  
+  <style>
+
+    nav {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2rem;
+      width: 100vw;
+      background-color: whitesmoke;
+    }
+    li>a,li {
+      text-decoration: none;
+      list-style: none;
+      padding-left: 1rem;
+      padding-top: .25rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <li><a href="http://localhost:3000/view">files</a></li>
+    <li><a href="http://localhost:3000/upload">upload</a></li>
+    <li><a href="/logout">logout</a></li>
+  </nav>
+  <div class="wrapper">
+    <header>File Uploader JavaScript</header>
+    <form action="/upload" method="POST"  enctype="multipart/form-data">
+      <input class="file-input" type="file" name="files" multiple>
+      <i class="fas fa-cloud-upload-alt"></i>
+      <p>Browse File to Upload</p>
+      <button type="submit">Upload</button>
+    </form>
+    <section class="progress-area"></section>
+    <section class="uploaded-area"></section>
+  </div>
+
+</body>
+</html>

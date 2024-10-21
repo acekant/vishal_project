@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Files</title>
+    <style>
+        /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+        
+        body{
+            background: #ddd;
+        }
+    
+      nav {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2rem;
+      width: 100vw;
+      background-color: whitesmoke;
+    }
+    li>a,li {
+      text-decoration: none;
+      list-style: none;
+      padding-left: 1rem;
+      padding-top: .25rem;
+      letter-spacing: 1px;
+      color:#214bb6;
+    }
+
+    .container{
+        height: 90vh;
+        width: 100vw;
+        padding-top: 1rem;
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        overflow: hidden;
+    }
+
+    img{
+        width: 1rem;
+        margin-top: 1rem;
+    }
+
+    ul {
+        color: aliceblue;
+    }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <li><a href="http://localhost:3000/view">files</a></li>
+        <li><a href="http://localhost:3000/upload">upload</a></li>
+        <li><a href="/logout">logout</a></li>
+      </nav>
+      <div class="container">
+        <h1>Uploaded Files</h1>
+    <ul>
+        <% if (files.length === 0) { %>
+            <li>No files uploaded yet.</li>
+        <% } else { %>
+            <% files.forEach(file => { %>
+                <li>
+                    <img src="/dir.png" alt="">
+                    <a href="/download/<%= file %>"><%= file %></a>
+                    
+                </li>
+            <% }) %>
+        <% } %>
+    </ul>
+      </div>
+    
+</body>
+</html>
